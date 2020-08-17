@@ -46,7 +46,7 @@ client.on('message', msg => {
     const embed = new discord.MessageEmbed()
     .setDescription(`:wave: | My prefix is ${prefix}`)
     .setColor("RANDOM")
-    .setFooter("© Client Developer 2020")
+    .setFooter("see all command `87help`")
     msg.channel.send(embed)
   }
   if(msg.content == prefix) {
