@@ -53,7 +53,6 @@ client.on("message", msg => {
     const embed = new discord.MessageEmbed()
       .setDescription(`:wave: | My prefix is ${prefix}`)
       .setColor("RANDOM")
-      .setFooter("© Client Developer 2020");
     msg.channel.send(embed);
   }
 /*
