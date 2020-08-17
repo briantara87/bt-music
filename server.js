@@ -77,7 +77,7 @@ You can type ${prefix}help to get bot commands list`)
   db.set(`cooldown_${msg.author.id}`, now);
   setTimeout(() => {
     db.delete(`cooldown_${msg.author.id}`)
-  },3000)
+  },3000) 
     
     file.run(client, msg, args)
   } catch (err) {
