@@ -60,10 +60,6 @@ You can type ${prefix}help to get bot commands list`)
   let args = msg.content.slice(prefix.length).trim().split(" ");
   let cmd = args.shift().toLowerCase();
   if(!msg.content.startsWith(prefix)) return;
-  
-  try {
-    const file = client.commands.get(cmd) || client.aliases.get(cmd)
-    if(!file) return msg.reply("Command that you want doesn't exist.")
     
     const now = Date.now()
    if (db.has(`cooldown_${msg.author.id}`)) {
@@ -78,13 +74,8 @@ You can type ${prefix}help to get bot commands list`)
     db.delete(`cooldown_${msg.author.id}`)
   },3000)
     
-    file.run(client, msg, args)
-  } catch (err) {
-    console.error(err)
-  } finally {
-    console.log(`${msg.author.tag} using ${cmd} in ${msg.channel.name} | ${msg.guild.name}`)
-  }
-}) 
+     }
+) 
 
 //insert token at .env first
 client.login(process.env.TOKEN)
