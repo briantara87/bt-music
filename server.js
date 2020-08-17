@@ -63,7 +63,7 @@ You can type ${prefix}help to get bot commands list`)
   
   try {
     const file = client.commands.get(cmd) || client.aliases.get(cmd)
-    if(!file) return msg.reply("Command that you want doesn't exist.")
+    if(!file) return msg.reply("exist")
     
     const now = Date.now()
    if (db.has(`cooldown_${msg.author.id}`)) {
