@@ -21,6 +21,7 @@ client.hastebin = async(text) => {
   .send(text);
   return `https://bin-clientdev.glitch.me/${body.key}`
 }
+
 //event
 client.on('ready', () => {
   console.log(`${client.user.tag} ready to serving ${client.guilds.cache.size} guild(s) and ${client.users.cache.size} user(s), with ${client.commands.size} command(s) total!`)
@@ -47,8 +48,8 @@ client.on('message', msg => {
     .setColor("RANDOM")
     .setFooter("© Client Developer 2020")
     msg.channel.send(embed)
-  
-if(msg.content == prefix) {
+  }
+  if(msg.content == prefix) {
     const embed = new discord.MessageEmbed()
     .setDescription(`Hey, It's me!
 You can type ${prefix}help to get bot commands list`)
@@ -62,10 +63,10 @@ You can type ${prefix}help to get bot commands list`)
   
   try {
     const file = client.commands.get(cmd) || client.aliases.get(cmd)
-    if(!file) return msg.reply("")
+    if(!file) return msg.reply("exist")
     
     const now = Date.now()
-   if (db.has(`cooldown_${msg.author.id}`)) 
+   if (db.has(`cooldown_${msg.author.id}`)) {
 	const expirationTime = db.get(`cooldown_${msg.author.id}`) + 3000;
 	if (now < expirationTime) {
 		const timeLeft = (expirationTime - now) / 1000;
@@ -84,5 +85,6 @@ You can type ${prefix}help to get bot commands list`)
     console.log(`${msg.author.tag} using ${cmd} in ${msg.channel.name} | ${msg.guild.name}`)
   }
 }) 
+
 //insert token at .env first
 client.login(process.env.TOKEN)
