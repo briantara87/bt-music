@@ -71,11 +71,13 @@ You can type ${prefix}help to get bot commands list`
     .trim()
     .split(" ");
   let cmd = args.shift().toLowerCase();
+  /*
   if (!msg.content.startsWith(prefix)) return;
 
   try {
     const file = client.commands.get(cmd) || client.aliases.get(cmd);
     if (!file) return msg.reply("");
+    
 
     const now = Date.now();
     if (db.has(`cooldown_${msg.author.id}`)) {
@@ -101,7 +103,7 @@ You can type ${prefix}help to get bot commands list`
     console.log(
       `${msg.author.tag} using ${cmd} in ${msg.channel.name} | ${msg.guild.name}`
     );
-  }
+  }*/
 });
 
 //insert token at .env first
