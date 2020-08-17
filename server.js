@@ -21,7 +21,7 @@ client.hastebin = async(text) => {
   .send(text);
   return `https://bin-clientdev.glitch.me/${body.key}`
 }
-
+/*
 //event
 client.on('ready', () => {
   console.log(`${client.user.tag} ready to serving ${client.guilds.cache.size} guild(s) and ${client.users.cache.size} user(s), with ${client.commands.size} command(s) total!`)
@@ -85,6 +85,6 @@ You can type ${prefix}help to get bot commands list`)
     console.log(`${msg.author.tag} using ${cmd} in ${msg.channel.name} | ${msg.guild.name}`)
   }
 }) 
-
+*/
 //insert token at .env first
 client.login(process.env.TOKEN)
