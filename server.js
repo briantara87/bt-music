@@ -49,7 +49,8 @@ client.on('message', msg => {
     .setFooter("© Client Developer 2020")
     msg.channel.send(embed)
   }
-  if(msg.content == prefix) {
+  
+  /*if(msg.content == prefix) {
     const embed = new discord.MessageEmbed()
     .setDescription(`Hey, It's me!
 You can type ${prefix}help to get bot commands list`)
@@ -83,7 +84,7 @@ You can type ${prefix}help to get bot commands list`)
     console.error(err)
   } finally {
     console.log(`${msg.author.tag} using ${cmd} in ${msg.channel.name} | ${msg.guild.name}`)
-  }
+  }*/
 }) 
 
 //insert token at .env first
