@@ -42,7 +42,7 @@ commandFile.forEach(file => {
   });
   console.log(
     `Loaded command ${command.name} with alias(es) => ${command.alias}`
-  );
+ );
 });
 
 client.on("message", msg => {
