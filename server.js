@@ -1,4 +1,3 @@
-
 const discord = require("discord.js");
 const client = new discord.Client({ disableMentions: "everyone" });
 const db = new Map();
@@ -46,11 +45,11 @@ client.on("message", msg => {
   if (msg.content == `<@${client.user.id}>`) {
     const embed = new discord.MessageEmbed()
       .setDescription(`:wave: | My prefix is ${prefix}`)
-    
-      .setColor("RANDOM")
+      .setfooter("to see commands type `87commands`")
+      .setColor("RANDOM");
     msg.channel.send(embed);
   }
-/*
+  /*
   if(msg.content == prefix) {
     const embed = new discord.MessageEmbed()
     .setDescription(`Hey, It's me!
@@ -87,7 +86,7 @@ You can type ${prefix}help to get bot commands list`)
     console.log(`${msg.author.tag} using ${cmd} in ${msg.channel.name} | ${msg.guild.name}`)
   }
   */
-})
+});
 
 //insert token at .env first
 client.login(process.env.TOKEN);
