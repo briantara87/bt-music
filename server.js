@@ -49,12 +49,12 @@ client.on('message', msg => {
     .setFooter("see all command `87help`")
     msg.channel.send(embed)
   }
-  if(msg.content == prefix) {
+ /* if(msg.content == prefix) {
     const embed = new discord.MessageEmbed()
     .setDescription(`Hey, It's me!
 You can type ${prefix}help to get bot commands list`)
     .setColor("RANDOM")
-    .setFooter("© Client Developer 2020")
+    .setFooter("commands `87commands`")
     return msg.channel.send(embed)
   }
   let args = msg.content.slice(prefix.length).trim().split(" ");
@@ -83,7 +83,7 @@ You can type ${prefix}help to get bot commands list`)
     console.error(err)
   } finally {
     console.log(`${msg.author.tag} using ${cmd} in ${msg.channel.name} | ${msg.guild.name}`)
-  }
+  }*/
 }) 
 
 //insert token at .env first
